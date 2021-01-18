@@ -1,0 +1,48 @@
+.container {
+  min-height: 100vh;
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /*text-align: center;*/
+}
+
+.button-admin{  
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 2vw;
+  font-weight: 500;
+  color: white;
+  background-color: blueviolet;
+  outline-width: 0;
+  border: 0;
+  border-radius: 3px;
+  padding: 10px 30px 10px 30px;
+}
+
+.p-admin{
+  font-family: monospace;
+  font-size: 3vw;
+  font-weight: 300;
+  color: white;
+}
+
+.p-admin-small{
+  font-family: monospace;
+  font-size: 1.8vw;
+  font-weight: 300;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .button-admin{ 
+    font-size: 6vw;
+  }
+  .p-admin{
+    font-size: 8vw;
+  }
+  .p-admin-small{
+    font-size: 5vw;
+  }
+}

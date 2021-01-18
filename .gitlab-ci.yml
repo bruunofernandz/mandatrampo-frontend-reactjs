@@ -1,0 +1,68 @@
+image: ubuntu:latest
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - apt-get update
+  - apt-get install -y nodejs
+  - apt-get install -y npm
+
+test noMaster:
+  stage: test 
+  except:
+    - master
+  script:
+    - chmod -Rf 777 ../
+    - ls
+    - pwd
+    - npm install -g npm@latest
+    - npm install broken-link-checker wait-on
+    - npm install
+    - npm run start &
+
+deploy noMaster:
+  stage: deploy
+  except:
+    - master
+  script:
+    - mkdir -p ~/.ssh
+    - echo "${PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 400 ~/.ssh/id_rsa
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
+    - ssh -o StrictHostKeyChecking=no -p 50683 devops@67.205.187.90 "cd /app/mandatrampo-dev/ && docker stop frontend-dev && rm -fr frontend"
+    - scp -P50683 -r ../frontend devops@67.205.187.90:/app/mandatrampo-dev/
+    - ssh -o StrictHostKeyChecking=no -p 50683 devops@67.205.187.90 "cd /app/mandatrampo-dev/frontend && chmod -Rf 777 ../frontend && chown -Rf devops.devops ../frontend && sudo docker-compose build frontend-dev && docker-compose up -d frontend-dev"
+    - exit
+
+test Master:
+  stage: test 
+  only:
+    - master
+  script:
+    - chmod -Rf 777 ../
+    - npm install -g npm@latest
+    - npm install broken-link-checker wait-on
+    - npm install
+    - npm run start &
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - mkdir -p ~/.ssh
+    - echo "${PRIVATE_KEY}" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 400 ~/.ssh/id_rsa
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
+    - ssh -o StrictHostKeyChecking=no -p 50683 devops@67.205.187.90 "cd /app/mandatrampo-prod/ && docker stop frontend-prod && rm -fr frontend"
+    - scp -P50683 -r ../frontend devops@67.205.187.90:/app/mandatrampo-prod/
+    - ssh -o StrictHostKeyChecking=no -p 50683 devops@67.205.187.90 "cd /app/mandatrampo-prod/frontend && chmod -Rf 777 ../frontend && chown -Rf devops.devops ../frontend && sudo docker-compose build frontend-prod && docker-compose up -d frontend-prod"
+    - exit

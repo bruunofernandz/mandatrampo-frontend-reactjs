@@ -1,0 +1,66 @@
+.cards-service-admin{
+  position: absolute;
+  top: 15vw;
+}
+
+.card-service-admin{
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 80vw;
+  padding: 15px;
+  margin-bottom: 3vh;
+  background-color: #ebe6e6;
+}
+
+.card-service-admin:hover{
+  cursor: pointer;
+  border: 3px solid blueviolet;
+}
+
+.card-service-admin > p{
+  font-family: monospace;
+  font-size: 1.3vw;
+  font-weight: 300;
+  color: black;
+}
+
+.title-admin{
+  position: absolute;
+  top: 5vw;
+  text-align: center;
+}
+
+.subtitle-admin{
+  position: absolute;
+  top: 9vw;
+  text-align: center;
+}
+
+.no-items-alert{
+  position: absolute;
+  top: 50vh;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-service-admin{
+    border-radius: 5px;
+    width: 80vw;
+    padding: 10px;
+    margin-bottom: 2vh;
+  }
+  
+  .card-service-admin > p{
+    font-size: 4vw;
+  }
+  
+  .subtitle-admin{
+    width: 80%;
+    top: 28vw;
+  }
+
+  .no-items-alert{
+    width: 80%;
+    top: 50vh;
+  }
+}

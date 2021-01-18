@@ -1,0 +1,194 @@
+.wrapper-servico {
+  margin: 0 auto;
+  font-size: 14px;
+  width: 700px;
+  padding: 25px;
+  box-shadow: 9px 11px 14px -1px rgba(195, 190, 205, 1);
+  border-radius: 20px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.servico-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.servico-foto {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+
+}
+
+.servico-content {
+  width: 75%;
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.servico-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-wrapper-servico {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.social-icone-servico {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5px;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.telefone-social-icone {
+  width: 30px;
+  height: 30px;
+}
+
+.social-item-servico:first-child {
+  margin-right: 5px;
+}
+
+.social-item-servico:nth-child(2) {
+  margin-right: 5px;
+}
+
+.social-item-servico {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.social-item-servico>strong {
+  font-weight: bold;
+}
+
+.servico-descricao {
+  line-height: 1.4rem;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.servico-descricao-wrapper {
+  border-top: 1px solid rgba(195, 190, 205, 1);
+  margin-top: 15px;
+  padding-top: 7.5px;
+}
+
+.curriculo-descricao>strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.title-service {
+  padding-top: 0px;
+  font-size: 36px;
+}
+
+.ico {
+  font-size: 18px;
+  color: #656;
+}
+
+.sc-fzqAbL {
+  height: 300px;
+}
+
+.cfOoLX {
+  width: 300px;
+}
+
+@media (max-width: 600px) {
+  .wrapper-servico {
+    margin-top: 15px;
+    width: 250px;
+    padding: 7.5px;
+  }
+
+  .cCngTu {
+    height: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .sc-fzqAbL {
+    margin-bottom: 25px;
+  }
+
+  .servico-wrapper {
+    flex-direction: column;
+  }
+
+  .servico-content {
+    width: 250px;
+    padding: 20px;
+  }
+
+  .servico-foto {
+    width: 150px;
+    height: 150px;
+    margin: 0px 0px 50px 0px;
+  }
+
+  .servico-descricao {
+    padding: 20px;
+    padding-top: 15px;
+  }
+
+  .social-item-servico {
+    display: block;
+    font-size: 13px;
+  }
+
+  .servico-descricao-wrapper {
+    border-top: 0px;
+    margin-top: 15px;
+    padding: 0px;
+  }
+
+  .social-icone-servico {
+    margin-bottom: 20px;
+  }
+
+  .title-service {
+    padding-top: 0px;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .iRjmVl {
+    min-width: 0px !important;
+    box-shadow: 0 0 0px 0px transparent !important;
+    color: #333 !important;
+    background-color: transparent !important;
+    font-size: 10px !important;
+    width: 25px !important;
+  }
+
+  .gidKdb {
+    min-width: 0px !important;
+    box-shadow: 0 0 0px 0px transparent !important;
+    color: #333 !important;
+    background-color: transparent !important;
+    font-size: 10px !important;
+  }
+
+  .servico-foto-carrose {
+    width: 10px !important;
+    height: 50px !important;
+  }
+
+  .gidKdb {
+    width: 25px !important;
+  }
+
+}

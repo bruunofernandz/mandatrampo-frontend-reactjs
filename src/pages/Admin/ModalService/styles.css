@@ -1,0 +1,109 @@
+.modal-service-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background-color: rgba(27, 35, 39, 0.9);
+}
+
+.modal-service-content{
+  position: absolute;
+  top: 27%;
+  left: 23%;
+  right: 23%;
+  bottom: auto;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(35, 31, 32, 0.16);
+  border-radius: 8px;
+}
+
+
+.modal-service-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-service-admin{
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px;
+}
+
+.modal-service-admin > h1{
+  font-family: monospace;
+  font-weight: 900;
+  color: black;
+}
+
+.modal-service-admin > p{
+  font-family: monospace;
+  font-size: 1.5vw;
+  font-weight: 300;
+  color: black;
+}
+
+.modal-service-buttons{
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.modal-service-buttons > button{
+  padding: 10px 20px 10px 20px;
+  outline-width: 0;
+  border: 0;
+  border-radius: 3px;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 1.3vw;
+}
+
+.modal-service-button-approve{
+  background-color: darkgreen;
+  color: white;
+}
+
+.modal-service-button-reject{
+  background-color: crimson;
+  color: white;
+}
+
+.modal-service-button-cancel{
+  background-color: blueviolet;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-service-content{
+    top: 5%;
+    left: 10%;
+    right: 10%;
+  }
+
+  .modal-service-admin > p{
+    font-size: 4vw;
+  }
+
+  .modal-service-buttons > button{
+    font-size: 3.5vw;
+  }
+
+  .modal-service-buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .modal-service-buttons > button{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}

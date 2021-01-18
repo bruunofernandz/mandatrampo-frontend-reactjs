@@ -1,0 +1,118 @@
+.wrapper {
+  margin: 0 auto;
+  font-size: 14px;
+  width: 550px;
+  padding: 25px;
+  box-shadow: 9px 11px 14px -1px rgba(195, 190, 205, 1);
+  border-radius: 20px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.curriculo-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.curriculo-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 20px;
+  box-shadow: 9px 11px 14px -1px rgba(195, 190, 205, 1);
+}
+
+.curriculo-content {
+  width: 75%;
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.curriculo-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-wrapper {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.social-icone {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5px;
+}
+
+.telefone-social-icone {
+  width: 30px;
+  height: 30px;
+}
+
+.social-item:first-child {
+  margin-right: 5px;
+}
+
+.social-item {
+  display: block;
+  margin-top: 5px;
+}
+
+.social-item > strong {
+  font-weight: bold;
+}
+
+.curriculo-descricao {
+  line-height: 1.4rem;
+  text-align: justify;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.curriculo-descricao-wrapper {
+  border-top: 1px solid rgba(195, 190, 205, 1);
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.curriculo-descricao > strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    margin-top: 15px;
+    width: 295px;
+    padding: 20px;
+  }
+
+  .curriculo-wrapper {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .curriculo-content {
+    width: 250px;
+    padding: 0px;
+  }
+
+  .curriculo-foto {
+    margin: 0px 0px 35px 0px;
+  }
+
+  .social-item {
+    display: block;
+    font-size: 13px;
+  }
+
+  .curriculo-descricao-wrapper {
+    border-top: 0px;
+  }
+}
